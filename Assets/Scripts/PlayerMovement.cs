@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float speed, maxSpeed;
     [SerializeField]
-    private Transform player;
+    private Transform body;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         
         //rotate the player to face the direction of movement
         if (moveDirection != Vector3.zero) {
-            player.rotation = Quaternion.Slerp(player.rotation, Quaternion.LookRotation(moveDirection), 0.15F);
+            body.rotation = Quaternion.Slerp(body.rotation, Quaternion.LookRotation(moveDirection), 0.15F);
         }
 
 
