@@ -18,13 +18,12 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetGun();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         moveDirection = Quaternion.Euler(0, -90, 0) * moveDirection;
@@ -42,12 +41,14 @@ public class PlayerMovement : MonoBehaviour
             transform.GetComponent<Rigidbody>().AddForce(moveDirection * speed);
         }
 
+        float fire2 = Input.GetAxis("Fire2");
+
         // if fire 1 is pressed
-        if (Input.GetButtonDown("Fire3") && !isRolling && hasGun) {
+        if ((fire2 > 0 || Input.GetButtonDown("Fire3")) && !isRolling && hasGun) {
             anim.SetBool("Shoot", true);
             isShooting = true;
         }
-        else if (Input.GetButtonUp("Fire3") && !isRolling && hasGun) {
+        else if ((fire2 < 0 || Input.GetButtonUp("Fire3")) && !isRolling && hasGun) {
             anim.SetBool("Shoot", false);
             isShooting = false;
         }
