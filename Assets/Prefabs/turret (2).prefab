@@ -198,6 +198,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1
   bullet: {fileID: 7407715824300297694, guid: 73de2e0fb3e1f1d6eb954a094e64576d, type: 3}
+  isPlayer: 0
+  addOffset: 0
+  inPlace: 0
+  flipDirection: 0
+  flipBulletDirection: 1
 --- !u!1 &8142499496795543049
 GameObject:
   m_ObjectHideFlags: 0

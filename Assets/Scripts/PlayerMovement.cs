@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (isShooting) {
-            shootingPoint.GetComponent<SendBullets>().UpdatePlayer();
+            shootingPoint.GetComponent<SendBullets>().MyUpdate();
         }
 
         // dash if jump is pressed
