@@ -53,9 +53,9 @@ public class PlayerMovement : MonoBehaviour
         // if fire 1 is pressed
         if ((fire2 > 0 || Input.GetButtonDown("Fire3")) && !isRolling && hasGun) {
             anim.SetBool("Shoot", true);
-            isShooting = true;
+            isShooting = true;  
         }
-        else if ((fire2 < 0 || Input.GetButtonUp("Fire3")) && !isRolling && hasGun) {
+        else if ((fire2 <= 0 || Input.GetButtonUp("Fire3")) && !isRolling && hasGun) {
             anim.SetBool("Shoot", false);
             isShooting = false;
         }
