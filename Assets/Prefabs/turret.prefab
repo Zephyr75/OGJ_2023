@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8351443202534564640}
   - component: {fileID: 1339897651396757095}
   - component: {fileID: 4649246362508216595}
+  - component: {fileID: 2681169712655460932}
   m_Layer: 0
   m_Name: Canon.001
   m_TagString: Untagged
@@ -85,6 +86,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &2681169712655460932
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2555434900046957608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.16395186
+  m_Height: 2.001351
+  m_Direction: 1
+  m_Center: {x: -0.000001899898, y: -1.6645575, z: 0.7316677}
 --- !u!1 &3813390914310102379
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +111,7 @@ GameObject:
   - component: {fileID: 3276408953217172275}
   - component: {fileID: 8210458959185001054}
   - component: {fileID: 1474315471057163726}
+  - component: {fileID: 5127381927959412245}
   m_Layer: 0
   m_Name: Canon.003
   m_TagString: Untagged
@@ -170,6 +186,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &5127381927959412245
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3813390914310102379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.16395183
+  m_Height: 2.0013504
+  m_Direction: 1
+  m_Center: {x: 0.0000019147994, y: -1.6645569, z: 0.7316677}
 --- !u!1 &4429695302279032082
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +294,7 @@ GameObject:
   - component: {fileID: 2380558780027465243}
   - component: {fileID: 8297375339479346209}
   - component: {fileID: 3348260750472830450}
+  - component: {fileID: 5206091043267591283}
   m_Layer: 0
   m_Name: Canon.002
   m_TagString: Untagged
@@ -338,6 +369,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &5206091043267591283
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4460686616312997775}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.16395183
+  m_Height: 2.001351
+  m_Direction: 1
+  m_Center: {x: 0.000000007450344, y: -1.6645555, z: 0.7316677}
 --- !u!1 &6811051473104497314
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +394,7 @@ GameObject:
   - component: {fileID: 1684883354265827042}
   - component: {fileID: 4881855448950190937}
   - component: {fileID: 8217697896956962983}
+  - component: {fileID: 6309501026456657651}
   m_Layer: 0
   m_Name: Canon
   m_TagString: Untagged
@@ -423,6 +469,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &6309501026456657651
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6811051473104497314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.16395183
+  m_Height: 2.001351
+  m_Direction: 1
+  m_Center: {x: 0.000000007450581, y: -1.6645575, z: 0.7316677}
 --- !u!1 &7294576743513431119
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +527,7 @@ GameObject:
   - component: {fileID: 4036599892486319665}
   - component: {fileID: 5597921505616622321}
   - component: {fileID: 1903290502127681608}
+  - component: {fileID: 1312785808028011822}
   m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
@@ -545,3 +606,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &1312785808028011822
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7684715028748979678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.215885
+  m_Height: 2.43177
+  m_Direction: 1
+  m_Center: {x: -0.00000007947286, y: -1.5573006e-15, z: 0.7427749}

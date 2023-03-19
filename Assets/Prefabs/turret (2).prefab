@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 7619007434360076535}
   - component: {fileID: 631113541668674992}
   - component: {fileID: 6547986827455730372}
+  - component: {fileID: 2263329054778429451}
   m_Layer: 0
   m_Name: Canon.001
   m_TagString: Untagged
@@ -168,6 +169,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &2263329054778429451
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4119902213568239615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.16395186
+  m_Height: 2.001351
+  m_Direction: 1
+  m_Center: {x: -0.000007621944, y: -1.6645555, z: 0.7316677}
 --- !u!1 &8142499496795543049
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +194,7 @@ GameObject:
   - component: {fileID: 2476572475907716582}
   - component: {fileID: 6338148315988207910}
   - component: {fileID: 14556554989263775}
+  - component: {fileID: 1828569772085867240}
   m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
@@ -254,6 +270,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &1828569772085867240
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8142499496795543049}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.2166036
+  m_Height: 2.5727146
+  m_Direction: 1
+  m_Center: {x: -0.00000007947286, y: 0.0000076293945, z: 0.7420563}
 --- !u!1 &9178869694110255000
 GameObject:
   m_ObjectHideFlags: 0
