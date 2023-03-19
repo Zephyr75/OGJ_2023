@@ -95,6 +95,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void KillPlayer() {
+        if (isDead) {
+            return;
+        }
         anim.SetTrigger("Death");
         StartCoroutine(Death());
         isDead = true;
@@ -106,18 +109,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     IEnumerator Death() {
-        List<string> texts = new List<string>();
-        texts.Add("You had no chance...");
+        string line = "You had no chance...";
         text.text = "";
-        foreach (string line in texts) {
-            foreach (char letter in line.ToCharArray()) {
-                text.text += letter;
-                yield return new WaitForSeconds(0.1f);
-            }
-            yield return new WaitForSeconds(2f);
-            text.text = "";
+        foreach (char letter in line.ToCharArray()) {
+            text.text += letter;
+            yield return new WaitForSeconds(0.1f);
         }
-
 
         Application.LoadLevel(Application.loadedLevel);
 
