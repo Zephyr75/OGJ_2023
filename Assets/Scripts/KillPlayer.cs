@@ -22,4 +22,11 @@ public class KillPlayer : MonoBehaviour
             collision.gameObject.GetComponent<PlayerMovement>().KillPlayer();
         }
     }
+
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Player") {
+            Destroy(other.gameObject);
+            other.gameObject.GetComponent<PlayerMovement>().KillPlayer();
+        }
+    }
 }

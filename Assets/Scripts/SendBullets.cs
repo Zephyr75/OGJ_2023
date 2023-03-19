@@ -5,7 +5,7 @@ using UnityEngine;
 public class SendBullets : MonoBehaviour
 {
     [SerializeField]
-    private float cooldown = 0.5f;
+    private float cooldown;
     [SerializeField]
     private GameObject bullet;
 
@@ -25,9 +25,8 @@ public class SendBullets : MonoBehaviour
         if (lastShot >= cooldown) {
             lastShot = 0f;
             GameObject bullet = Instantiate(this.bullet);
-            bullet.transform.position = transform.position + transform.forward;
+            bullet.transform.position = transform.position + transform.forward - transform.up * 3f;
             bullet.transform.rotation = transform.rotation;
-
         }
         
     }

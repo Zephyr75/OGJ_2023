@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private float lifeTime = 3f;
+    private float lifeTime;
     private float speed = 20f;
     private float maxLifeTime = 3f;
 
@@ -17,15 +17,18 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.Translate(-Vector3.up * speed * Time.deltaTime);
         lifeTime += Time.deltaTime;
         if (lifeTime >= maxLifeTime) {
             Destroy(gameObject);
         }
     }
 
-    void OnCollisionEnter(Collision collision) {
-        Destroy(gameObject);    
+    void OnTriggerEnter(Collider other) {
+        // print("Bullet hit " + other.gameObject.tag);
+        if (other.gameObject.tag != "Enemy") {
+            Destroy(gameObject);
+        }
     }
 
 }

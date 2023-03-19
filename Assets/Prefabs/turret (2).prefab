@@ -95,9 +95,10 @@ GameObject:
   - component: {fileID: 631113541668674992}
   - component: {fileID: 6547986827455730372}
   - component: {fileID: 2263329054778429451}
+  - component: {fileID: 871017618899910676}
   m_Layer: 0
   m_Name: Canon.001
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,6 +184,20 @@ CapsuleCollider:
   m_Height: 2.001351
   m_Direction: 1
   m_Center: {x: -0.000007621944, y: -1.6645555, z: 0.7316677}
+--- !u!114 &871017618899910676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4119902213568239615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 023586366d3a97d43a8e9f2f5f075333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 1
+  bullet: {fileID: 7407715824300297694, guid: 73de2e0fb3e1f1d6eb954a094e64576d, type: 3}
 --- !u!1 &8142499496795543049
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,9 +210,10 @@ GameObject:
   - component: {fileID: 6338148315988207910}
   - component: {fileID: 14556554989263775}
   - component: {fileID: 1828569772085867240}
+  - component: {fileID: 9058929411105997300}
   m_Layer: 0
   m_Name: Top
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,7 +225,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8142499496795543049}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -217,7 +233,7 @@ Transform:
   - {fileID: 7619007434360076535}
   m_Father: {fileID: 8370562190242618658}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90}
 --- !u!33 &6338148315988207910
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -284,6 +300,19 @@ CapsuleCollider:
   m_Height: 2.5727146
   m_Direction: 1
   m_Center: {x: -0.00000007947286, y: 0.0000076293945, z: 0.7420563}
+--- !u!114 &9058929411105997300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8142499496795543049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91a7aef5a993327f86c06e4d62ed340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
 --- !u!1 &9178869694110255000
 GameObject:
   m_ObjectHideFlags: 0
