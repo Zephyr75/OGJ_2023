@@ -10,6 +10,10 @@ public class SendBullets : MonoBehaviour
     private GameObject bullet;
     [SerializeField]
     private bool isPlayer, addOffset, inPlace, flipDirection, flipBulletDirection, isMovingTurret;
+    [SerializeField]
+    private Material blueLaser;
+    [SerializeField]
+    private Transform player;
 
     private float lastShot = 0f;
 
@@ -17,7 +21,7 @@ public class SendBullets : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame
@@ -27,37 +31,11 @@ public class SendBullets : MonoBehaviour
         if (!isPlayer) {
             MyUpdate();
         }
-
-        // if (lastShot >= cooldown && !isPlayer) {
-        //     lastShot = 0f;
-        //     GameObject bullet = Instantiate(this.bullet);
-        //     if (addOffset) {
-        //         bullet.transform.position = transform.position + transform.forward + transform.up * 3f;
-        //     } else {
-        //         if (inPlace) {
-        //             bullet.transform.position = transform.position;
-        //         } else {
-        //             bullet.transform.position = transform.position + transform.forward - transform.up * 3f;
-        //         }
-        //     }
-
-        //     float offset = 0f;
-
-        //     if (addOffset) {
-        //         offset = 20f;
-        //     }
-
-        //     if (flipDirection) {
-        //         bullet.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, 180f + offset, 0f));
-        //     } else {
-        //         bullet.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, offset, 0f));
-        //     }
-        // }
         
     }
 
     public void MyUpdate() {
-        if (lastShot >= cooldown) {
+        if (lastShot >= cooldown && Vector3.Distance(player.position, transform.position) < 15f) {
             lastShot = 0f;
             float rotationOffset = addOffset ? 20f : 0f;
             rotationOffset += flipDirection ? 180f : 0f;
@@ -72,6 +50,7 @@ public class SendBullets : MonoBehaviour
             }
             if (isPlayer) {
                 bullet.GetComponent<Kill>().isPlayer = true;
+                bullet.GetComponent<MeshRenderer>().material = blueLaser;
             }
         }
     }

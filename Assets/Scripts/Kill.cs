@@ -21,9 +21,11 @@ public class Kill : MonoBehaviour
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "Player" && !isPlayer) {
             collision.gameObject.GetComponent<PlayerMovement>().KillPlayer();
+            Destroy(gameObject);
         }
         if (collision.gameObject.tag == "Enemy" && collision.gameObject.GetComponent<CanBeKilled>() != null && isPlayer) {
             Destroy(collision.gameObject.transform.parent.parent.gameObject);
+            Destroy(gameObject);
         }
 
     }
@@ -31,10 +33,11 @@ public class Kill : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player" && !isPlayer) {
             other.gameObject.GetComponent<PlayerMovement>().KillPlayer();
+            Destroy(gameObject);
         }
-        print("Kill hit " + other.gameObject.tag);
         if (other.gameObject.tag == "Enemy" && other.gameObject.GetComponent<CanBeKilled>() != null && isPlayer) {
             Destroy(other.gameObject.transform.parent.parent.gameObject);
+            Destroy(gameObject);
         }
     }
 }

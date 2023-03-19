@@ -9,11 +9,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform body;
     [SerializeField]
-    private GameObject shootingPoint;
+    private GameObject shootingPoint, gun;
     [SerializeField]
     private Animator anim;
 
-    private bool isRolling = false, isShooting = false;
+    private bool isRolling = false, isShooting = false, hasGun = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,11 +43,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // if fire 1 is pressed
-        if (Input.GetButtonDown("Fire3")) {
+        if (Input.GetButtonDown("Fire3") && !isRolling && hasGun) {
             anim.SetBool("Shoot", true);
             isShooting = true;
         }
-        else if (Input.GetButtonUp("Fire3")) {
+        else if (Input.GetButtonUp("Fire3") && !isRolling && hasGun) {
             anim.SetBool("Shoot", false);
             isShooting = false;
         }
@@ -78,17 +78,22 @@ public class PlayerMovement : MonoBehaviour
             transform.GetComponent<Rigidbody>().AddForce(direction * rollSpeed);
             yield return null;
         }
+        isRolling = false;
 
         yield return new WaitForSeconds(.3f);
         
         transform.GetComponent<CapsuleCollider>().center = new Vector3(0, 1.1f, 0);
         transform.GetComponent<CapsuleCollider>().height = 2.2f;
-        isRolling = false;
     }
 
     public void KillPlayer() {
         Destroy(gameObject);
         GetComponent<PlayerMovement>().enabled = false;
+    }
+
+    public void GetGun() {
+        hasGun = true;
+        gun.SetActive(true);
     }
 
     

@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
         // print("Bullet hit " + other.gameObject.tag);
         if (other.gameObject.tag != "Enemy") {
             Destroy(gameObject);
+            
         }
     }
 
