@@ -32,8 +32,8 @@ public class Intro : MonoBehaviour
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
         GameObject.Find("Player").GetComponent<Rigidbody>().isKinematic = false;
         List<string> texts = new List<string>();
-        texts.Add(" You will not escape alive, subject 2077... ");
-        texts.Add("I am in your mind, subject 2077...");
+        texts.Add(" You will not escape alive, subject 77... ");
+        texts.Add("I am in your mind, subject 77...");
         text.text = "";
         int i = 0;
         foreach (string line in texts) {
@@ -42,9 +42,9 @@ public class Intro : MonoBehaviour
             }
             foreach (char letter in line.ToCharArray()) {
                 text.text += letter;
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.05f);
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             text.text = "";
             i++;
         }
