@@ -19,6 +19,7 @@ public class PickUpGun : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
             other.gameObject.GetComponent<PlayerMovement>().GetGun();
+            Destroy(gameObject);
         }
     }
 
