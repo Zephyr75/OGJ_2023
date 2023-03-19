@@ -115,6 +115,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1
   bullet: {fileID: 7407715824300297694, guid: 73de2e0fb3e1f1d6eb954a094e64576d, type: 3}
+  isPlayer: 0
+  addOffset: 1
+  flipDirection: 1
 --- !u!1 &3813390914310102379
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +233,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1
   bullet: {fileID: 7407715824300297694, guid: 73de2e0fb3e1f1d6eb954a094e64576d, type: 3}
+  isPlayer: 0
+  addOffset: 1
+  flipDirection: 1
 --- !u!1 &4429695302279032082
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +434,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1
   bullet: {fileID: 7407715824300297694, guid: 73de2e0fb3e1f1d6eb954a094e64576d, type: 3}
+  isPlayer: 0
+  addOffset: 1
+  flipDirection: 1
 --- !u!1 &6811051473104497314
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +552,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1
   bullet: {fileID: 7407715824300297694, guid: 73de2e0fb3e1f1d6eb954a094e64576d, type: 3}
+  isPlayer: 0
+  addOffset: 1
+  flipDirection: 1
 --- !u!1 &7294576743513431119
 GameObject:
   m_ObjectHideFlags: 0

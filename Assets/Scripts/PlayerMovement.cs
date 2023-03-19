@@ -9,9 +9,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform body;
     [SerializeField]
+    private GameObject shootingPoint;
+    [SerializeField]
     private Animator anim;
 
-    private bool isRolling = false;
+    private bool isRolling = false, isShooting = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,13 +45,19 @@ public class PlayerMovement : MonoBehaviour
         // if fire 1 is pressed
         if (Input.GetButtonDown("Fire3")) {
             anim.SetBool("Shoot", true);
+            isShooting = true;
         }
         else if (Input.GetButtonUp("Fire3")) {
             anim.SetBool("Shoot", false);
+            isShooting = false;
+        }
+
+        if (isShooting) {
+            shootingPoint.GetComponent<SendBullets>().UpdatePlayer();
         }
 
         // dash if jump is pressed
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetButtonDown("Fire1") && !isRolling && !isShooting) {
             anim.SetTrigger("Roll");
             StartCoroutine(Roll(moveDirection));
         }

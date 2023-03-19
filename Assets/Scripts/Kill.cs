@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KillPlayer : MonoBehaviour
+public class Kill : MonoBehaviour
 {
+    public bool isPlayer = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,14 +19,15 @@ public class KillPlayer : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Player") {
+        if (collision.gameObject.tag == "Player" && !isPlayer) {
             Destroy(collision.gameObject);
             collision.gameObject.GetComponent<PlayerMovement>().KillPlayer();
         }
+        
     }
 
     void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Player") {
+        if (other.gameObject.tag == "Player" && !isPlayer) {
             Destroy(other.gameObject);
             other.gameObject.GetComponent<PlayerMovement>().KillPlayer();
         }
