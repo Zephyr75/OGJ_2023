@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (transform.GetComponent<Rigidbody>().velocity.magnitude < maxSpeed) {
+        if (transform.GetComponent<Rigidbody>().velocity.magnitude < maxSpeed && Time.timeScale != 0f) {
             transform.GetComponent<Rigidbody>().AddForce(moveDirection * speed);
         }
 

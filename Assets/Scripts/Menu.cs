@@ -7,35 +7,51 @@ public class Menu : MonoBehaviour
     [SerializeField]
     private GameObject pauseMenu, mainMenu, creditsMenu;
 
+    private bool isPaused = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isPaused) {
+            Time.timeScale = 0f;
+        } else {
+            Time.timeScale = 1f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (isPaused) {
+                Resume();
+            } else {
+                Pause();
+            }
+        }
         
     }
 
     public void StartGame() {
         mainMenu.SetActive(false);
-        Time.timeScale = 1f;
+        isPaused = false;
     }
 
     public void Resume() {
         pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
+        isPaused = false;
     }
 
     public void Pause() {
         pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
+        isPaused = true;
     }
 
     public void Quit() {
         Application.Quit();
+        print("Quit");
     }
 
     public void LoadCredits() {
@@ -46,6 +62,10 @@ public class Menu : MonoBehaviour
     public void LoadMainMenu() {
         creditsMenu.SetActive(false);
         mainMenu.SetActive(true);
+    }
+
+    public void Restart() {
+        Application.LoadLevel(Application.loadedLevel);
     }
 
 }

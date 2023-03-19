@@ -30,7 +30,7 @@ public class CopyPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isActive) {
+        if (!isActive || Time.timeScale == 0f) {
             return;
         }
 
