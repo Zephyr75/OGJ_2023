@@ -70,8 +70,8 @@ public class PlayerMovement : MonoBehaviour
         float rollTimer = 0f;
 
 
-        transform.GetComponent<CapsuleCollider>().center = new Vector3(0, .5f, 0);
-        transform.GetComponent<CapsuleCollider>().height = 1f;    
+        transform.GetComponent<CapsuleCollider>().center = new Vector3(0, .3f, 0);
+        transform.GetComponent<CapsuleCollider>().height = .5f;
 
         while (rollTimer < rollTime) {
             rollTimer += Time.deltaTime;
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
             yield return null;
         }
 
-        // yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.3f);
         
         transform.GetComponent<CapsuleCollider>().center = new Vector3(0, 1.1f, 0);
         transform.GetComponent<CapsuleCollider>().height = 2.2f;

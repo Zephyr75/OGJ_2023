@@ -9,7 +9,7 @@ public class SendBullets : MonoBehaviour
     [SerializeField]
     private GameObject bullet;
     [SerializeField]
-    private bool isPlayer, addOffset, inPlace, flipDirection, flipBulletDirection;
+    private bool isPlayer, addOffset, inPlace, flipDirection, flipBulletDirection, isMovingTurret;
 
     private float lastShot = 0f;
 
@@ -67,6 +67,12 @@ public class SendBullets : MonoBehaviour
             GameObject bullet = Instantiate(this.bullet);
             bullet.transform.position = transform.position + positionOffset;
             bullet.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, rotationOffset, 0f));
+            if (isMovingTurret) {
+                bullet.transform.rotation = Quaternion.Euler(bullet.transform.rotation.eulerAngles + new Vector3(0f, 90f, 0f));
+            }
+            if (isPlayer) {
+                bullet.GetComponent<Kill>().isPlayer = true;
+            }
         }
     }
 }

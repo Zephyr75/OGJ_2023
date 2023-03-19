@@ -20,16 +20,21 @@ public class Kill : MonoBehaviour
 
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "Player" && !isPlayer) {
-            Destroy(collision.gameObject);
             collision.gameObject.GetComponent<PlayerMovement>().KillPlayer();
         }
-        
+        if (collision.gameObject.tag == "Enemy" && collision.gameObject.GetComponent<CanBeKilled>() != null && isPlayer) {
+            Destroy(collision.gameObject.transform.parent.parent.gameObject);
+        }
+
     }
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player" && !isPlayer) {
-            Destroy(other.gameObject);
             other.gameObject.GetComponent<PlayerMovement>().KillPlayer();
+        }
+        print("Kill hit " + other.gameObject.tag);
+        if (other.gameObject.tag == "Enemy" && other.gameObject.GetComponent<CanBeKilled>() != null && isPlayer) {
+            Destroy(other.gameObject.transform.parent.parent.gameObject);
         }
     }
 }
