@@ -13,6 +13,9 @@ public class SendBullets : MonoBehaviour
     [SerializeField]
     private Material blueLaser;
     [SerializeField]
+    AudioSource audioSource; 
+    [SerializeField]
+    AudioClip gunshot;
     private Transform player;
 
     private float lastShot = 0f;
@@ -51,6 +54,7 @@ public class SendBullets : MonoBehaviour
             if (isPlayer) {
                 bullet.GetComponent<Kill>().isPlayer = true;
                 bullet.GetComponent<MeshRenderer>().material = blueLaser;
+                audioSource.PlayOneShot(gunshot);
             }
         }
     }
