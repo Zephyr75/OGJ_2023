@@ -7,6 +7,8 @@ public class Intro : MonoBehaviour
 {
     [SerializeField]
     TextMeshProUGUI text;
+    [SerializeField]
+    AudioSource audioSource; 
 
     // Start is called before the first frame update
     void Start()
@@ -38,5 +40,8 @@ public class Intro : MonoBehaviour
             yield return new WaitForSeconds(2f);
             text.text = "";
         }
+        // audioSource.Play();
+        // audioSource.PlayOneShot(audioSource.clip);
+
     }
 }
