@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,18 +13,25 @@ public class PlayerMovement : MonoBehaviour
     private GameObject shootingPoint, gun;
     [SerializeField]
     private Animator anim;
+    [SerializeField]
+    TextMeshProUGUI text;
 
-    private bool isRolling = false, isShooting = false, hasGun = false;
+    private bool isRolling = false, isShooting = false, hasGun = false, isDead = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        GetGun();//TODO remove
+        GetGun();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isDead) {
+            return;
+        }
+
         Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         moveDirection = Quaternion.Euler(0, -90, 0) * moveDirection;
@@ -88,13 +96,32 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void KillPlayer() {
-        Destroy(gameObject);
-        GetComponent<PlayerMovement>().enabled = false;
+        anim.SetTrigger("Death");
+        StartCoroutine(Death());
+        isDead = true;
     }
 
     public void GetGun() {
         hasGun = true;
         gun.SetActive(true);
+    }
+
+    IEnumerator Death() {
+        List<string> texts = new List<string>();
+        texts.Add("You had no chance...");
+        text.text = "";
+        foreach (string line in texts) {
+            foreach (char letter in line.ToCharArray()) {
+                text.text += letter;
+                yield return new WaitForSeconds(0.1f);
+            }
+            yield return new WaitForSeconds(2f);
+            text.text = "";
+        }
+
+
+        Application.LoadLevel(Application.loadedLevel);
+
     }
 
     

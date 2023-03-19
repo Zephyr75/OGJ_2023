@@ -12,13 +12,14 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+    
     }
 
     // Update is called once per frame
     void Update()
     {
         if (isPaused) {
+            Screen.SetResolution(Screen.width, Screen.height, true);
             Time.timeScale = 0f;
         } else {
             Time.timeScale = 1f;
