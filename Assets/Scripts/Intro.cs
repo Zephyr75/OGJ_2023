@@ -18,7 +18,7 @@ public class Intro : MonoBehaviour
     }
 
     IEnumerator activatePlayer() {
-        yield return new WaitForSeconds(0f);
+        yield return new WaitForSeconds(0f);//TODO replace by 6f
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
         GameObject.Find("Player").GetComponent<Rigidbody>().isKinematic = false;
     }
