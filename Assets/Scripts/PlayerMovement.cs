@@ -78,5 +78,10 @@ public class PlayerMovement : MonoBehaviour
         isRolling = false;
     }
 
+    public void KillPlayer() {
+        Destroy(gameObject);
+        GetComponent<PlayerMovement>().enabled = false;
+    }
+
     
 }

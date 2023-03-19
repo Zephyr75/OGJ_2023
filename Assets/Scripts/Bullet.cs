@@ -22,9 +22,10 @@ public class Bullet : MonoBehaviour
         if (lifeTime >= maxLifeTime) {
             Destroy(gameObject);
         }
-
-
     }
 
+    void OnCollisionEnter(Collision collision) {
+        Destroy(gameObject);    
+    }
 
 }
